@@ -1,0 +1,30 @@
+name: kubectl CLI Action
+description: Action to run kubectl command by passing kub config file (base64 encoded)
+author: teknatha136
+branding:
+  icon: terminal
+  color: white
+inputs:
+  kubectl-version:
+    description: kubectl cli version
+    required: false
+    default: latest
+  kube-config:
+    description: A base64 encoded kube config file.
+    required: true
+runs:
+  using: composite
+  steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+    - name: Configure kubectl
+      run: kubectl-setup.sh
+      shell: bash
+      env:
+        KUBECTL_VERSION: ${{ inputs.kubectl-version }}
+    - name: Decode kube config file
+      run: decode-kubeconfig.sh
+      shell: bash
+      env:
+        KUBE_CONFIG: ${{ inputs.kube-config }}
+    
