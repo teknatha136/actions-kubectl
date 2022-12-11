@@ -27,4 +27,8 @@ runs:
       shell: bash
       env:
         KUBE_CONFIG: ${{ inputs.kube-config }}
+    - name: Post Kubectl Run
+      uses: webiny/action-post-run@2.0.1
+      with:
+        run: rm -rf ./bin && rm -rf ./.kube && rm ./kubectl.sha256
     
