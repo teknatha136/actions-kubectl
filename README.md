@@ -5,7 +5,7 @@
  TO make use of this action add the following steps to your GitHub Action workflow:
 
  ```yaml
-      - uses: ByteBhutan/actions-kubectl@main
+      - uses: teknatha136/actions-kubectl@main
         with:
           kubectl-version: v1.24.3
           kube-config: ${{ secrets.BASE64_ENCODED_KUBECONFIG_SECRET }}
@@ -20,7 +20,7 @@ Once above step is included in you GitHub Action workflow, kubectl will be downl
 To execute the kubectl command refer below example
 
 ```yaml
-      - uses: ByteBhutan/actions-kubectl@main
+      - uses: teknatha136/actions-kubectl@main
         with:
           kubectl-version: v1.24.3
           kube-config: ${{ secrets.BASE64_ENCODED_KUBECONFIG_SECRET }}
