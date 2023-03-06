@@ -25,5 +25,5 @@ To execute the kubectl command refer below example
           kubectl-version: v1.24.3
           kube-config: ${{ secrets.BASE64_ENCODED_KUBECONFIG_SECRET }}
 
-      - run: ./bin/kubectl --kubeconfig=.kube/config get nodes
+      - run: ./kubebin/kubectl --kubeconfig=.kube/config get nodes
 ```
