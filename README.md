@@ -15,7 +15,7 @@
 
 Action also expects required `kube-config` input. This is the `base64` encoded kubeconfig file. This is usually available at `~/.kube/config`.
 
-Once above step is included in you GitHub Action workflow, kubectl will be downloaded and stored `./bin` directory and kubeconfig file will be decoded and stored at `./.kubec` directory
+Once above step is included in you GitHub Action workflow, kubectl will be downloaded and stored `./kubebin` directory and kubeconfig file will be decoded and stored at `./.kube/config` directory
 
 To execute the kubectl command refer below example
 
